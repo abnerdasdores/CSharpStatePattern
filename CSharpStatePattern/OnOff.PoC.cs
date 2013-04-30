@@ -9,7 +9,7 @@ namespace CSharpStatePattern.PoC
     /// </summary>
     public abstract class OnOff
     {
-        #region Values
+        #region Undelying Values
         public enum Values
         {
             On,
@@ -17,7 +17,7 @@ namespace CSharpStatePattern.PoC
         }
         #endregion
 
-        #region States
+        #region State Values
         private static OnOff on = new OnState();
         public static OnOff On
         {
@@ -93,7 +93,7 @@ namespace CSharpStatePattern.PoC
         public abstract OnOff Switch();
         #endregion
 
-        # region On State
+        # region On State Type
         public class OnState : OnOff
         {
             internal OnState()
@@ -108,7 +108,7 @@ namespace CSharpStatePattern.PoC
         }
         #endregion
 
-        #region Off State
+        #region Off State Type
         public class OffState : OnOff
         {
             internal OffState()

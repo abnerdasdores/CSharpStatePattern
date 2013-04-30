@@ -12,6 +12,7 @@ namespace CSharpStatePattern.Generic
     public abstract class State<TState, TValues>
         where TValues : struct, IConvertible
     {
+        #region State Values
         public static IEnumerable<State<TState, TValues>> states = null;
         public static IEnumerable<State<TState, TValues>> States
         {
@@ -21,12 +22,13 @@ namespace CSharpStatePattern.Generic
                 {
                     var stateType = typeof(TState);
                     var staticProperties = stateType.GetProperties(BindingFlags.Static | BindingFlags.Public);
-                    var stateProperties = staticProperties.Where(p => p.DeclaringType.IsSubclassOf(stateType));
+                    var stateProperties = staticProperties.Where(p => p.PropertyType == stateType);
                     states = stateProperties.Select(p => p.GetValue(null, null)).Cast<State<TState, TValues>>();
                 }
                 return states;
             }
         }
+        #endregion
 
         #region Operators
         public static implicit operator State<TState, TValues>(TValues value)

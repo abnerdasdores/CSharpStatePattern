@@ -142,6 +142,14 @@ namespace CSharpStatePattern.PoC.Test
             Assert.AreEqual(onValueAsByte, onCastToByte);
         }
         [Test]
+        public void TestImplicitCastToByte()
+        {
+            var on = OnOff.On;
+            var onValueAsByte = (byte)OnOff.On.Value;
+            byte onCastToByte = on;
+            Assert.AreEqual(onValueAsByte, onCastToByte);
+        }
+        [Test]
         public void TestToString()
         {
             var onValueAsString = OnOff.Values.On.ToString();
