@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStatePattern", "CSharpStatePattern.csproj", "{304C981C-1A71-4D75-8478-F2174FC1794E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A7FFD1A2-0712-4CF0-9BFC-6620AEA7F9A9}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStatePattern.Playground", "..\CSharpStatePattern.Playground\CSharpStatePattern.Playground.csproj", "{DB82EDD0-B4FB-4108-AC1A-DF057AF23656}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStatePattern", "CSharpStatePattern\CSharpStatePattern.csproj", "{304C981C-1A71-4D75-8478-F2174FC1794E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStatePattern.Test", "..\CSharpStatePattern.Test\CSharpStatePattern.Test.csproj", "{4D88014C-CAFE-4588-BC61-12DD766ADE4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStatePattern.Playground", "CSharpStatePattern.Playground\CSharpStatePattern.Playground.csproj", "{DB82EDD0-B4FB-4108-AC1A-DF057AF23656}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpStatePattern.Test", "CSharpStatePattern.Test\CSharpStatePattern.Test.csproj", "{4D88014C-CAFE-4588-BC61-12DD766ADE4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
