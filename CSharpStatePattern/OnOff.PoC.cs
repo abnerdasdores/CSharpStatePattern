@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace CSharpStatePattern
+namespace CSharpStatePattern.PoC
 {
     /// <summary>
     /// This class is used as proof of concept of how to implement the state pattern in CSharp

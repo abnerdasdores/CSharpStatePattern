@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace CSharpStatePattern.Test
+namespace CSharpStatePattern.PoC.Test
 {
     [TestFixture]
-    public class OnOffTests
+    public class OnOffPoCTests
     {
         [Test]
         public void TestOnIsOn()
