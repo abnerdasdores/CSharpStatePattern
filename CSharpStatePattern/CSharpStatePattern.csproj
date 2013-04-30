@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Target.cs.donotcompileyet" />
+    <Compile Include="State.Generic.cs" />
     <Compile Include="OnOff.PoC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
