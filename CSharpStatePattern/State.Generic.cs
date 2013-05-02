@@ -7,7 +7,7 @@ using System.Reflection;
 namespace CSharpStatePattern
 {
     /// <summary>
-    /// This class is used as proof of concept of how to implement the state pattern in CSharp
+    /// Base class for State pattern implementation
     /// </summary>
     public abstract class State<TState, TValues>
         where TValues : struct, IConvertible
