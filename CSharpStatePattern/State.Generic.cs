@@ -11,10 +11,11 @@ namespace CSharpStatePattern.Generic
     /// </summary>
     public abstract class State<TState, TValues>
         where TValues : struct, IConvertible
+        where TState : State<TState, TValues>
     {
         #region State Values
-        public static IEnumerable<State<TState, TValues>> states = null;
-        public static IEnumerable<State<TState, TValues>> States
+        public static IEnumerable<TState> states = null;
+        public static IEnumerable<TState> States
         {
             get
             {
@@ -23,7 +24,7 @@ namespace CSharpStatePattern.Generic
                     var stateType = typeof(TState);
                     var staticProperties = stateType.GetProperties(BindingFlags.Static | BindingFlags.Public);
                     var stateProperties = staticProperties.Where(p => p.PropertyType == stateType);
-                    states = stateProperties.Select(p => p.GetValue(null, null)).Cast<State<TState, TValues>>();
+                    states = stateProperties.Select(p => p.GetValue(null, null)).Cast<TState>();
                 }
                 return states;
             }
@@ -33,7 +34,7 @@ namespace CSharpStatePattern.Generic
         #region Operators
         public static implicit operator State<TState, TValues>(TValues value)
         {
-            return State<TState, TValues>.States.Single(s => s.Value.Equals(value));
+            return State<TState, TValues>.States.Single(state => state.Value.Equals(value));
         }
         public static implicit operator TValues(State<TState, TValues> state)
         {
@@ -49,7 +50,7 @@ namespace CSharpStatePattern.Generic
         }
         #endregion
 
-        #region Shared Base Members
+        #region Constructors
         protected State(TValues value, string displayText)
         {
             this.value = value;
@@ -60,7 +61,9 @@ namespace CSharpStatePattern.Generic
             : this(value, value.ToString())
         {
         }
+        #endregion
 
+        #region Properties
         protected TValues value;
         public TValues Value
         {

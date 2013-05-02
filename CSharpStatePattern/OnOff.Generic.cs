@@ -29,7 +29,7 @@ namespace CSharpStatePattern.Generic
         }
         #endregion
 
-        #region Shared Base Members
+        #region Constructors
         protected OnOff(Values value, string displayText)
             : base(value, displayText)
         {
@@ -41,7 +41,18 @@ namespace CSharpStatePattern.Generic
         }
         #endregion
 
-        #region Shared Custom Members
+        #region Operators
+        public static implicit operator OnOff(OnOff.Values value)
+        {
+            return OnOff.States.Single(state => state.Value.Equals(value));
+        }
+        public static implicit operator OnOff(byte valueAsByte)
+        {
+            return OnOff.States.Single(state => ((byte)state.Value == valueAsByte));
+        }
+        #endregion
+
+        #region Custom Members
         public abstract OnOff Switch();
         #endregion
 

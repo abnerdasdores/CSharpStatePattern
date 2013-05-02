@@ -59,7 +59,7 @@ namespace CSharpStatePattern.PoC
         }
         #endregion
 
-        #region Shared Base Members
+        #region Constructors
         protected OnOff(Values value, string displayText)
         {
             this.value = value;
@@ -70,7 +70,9 @@ namespace CSharpStatePattern.PoC
             : this(value, value.ToString())
         {
         }
+        #endregion
 
+        #region Properties
         protected Values value;
         public Values Value
         {
@@ -89,7 +91,7 @@ namespace CSharpStatePattern.PoC
         }
         #endregion
 
-        #region Shared Custom Members
+        #region Custom Members
         public abstract OnOff Switch();
         #endregion
 

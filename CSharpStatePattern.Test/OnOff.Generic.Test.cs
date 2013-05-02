@@ -125,14 +125,14 @@ namespace CSharpStatePattern.Generic.Test
             var onValueAsByteCastToOnOff = (OnOff)onValueAsByte;
             Assert.AreEqual(on, onValueAsByteCastToOnOff);
         }
-        //[Test]
-        //public void TestImplicitCastFromByte()
-        //{
-        //    var on = OnOff.On;
-        //    var onValueAsByte = (byte)OnOff.On.Value;
-        //    OnOff onValueAsByteCastToOnOff = onValueAsByte;
-        //    Assert.AreEqual(on, onValueAsByteCastToOnOff);
-        //}
+        [Test]
+        public void TestImplicitCastFromByte()
+        {
+            var on = OnOff.On;
+            var onValueAsByte = (byte)OnOff.On.Value;
+            OnOff onValueAsByteCastToOnOff = onValueAsByte;
+            Assert.AreEqual(on, onValueAsByteCastToOnOff);
+        }
         [Test]
         public void TestExplicitCastToByte()
         {
