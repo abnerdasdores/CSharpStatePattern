@@ -29,14 +29,9 @@ namespace CSharpStatePattern.Partials
         }
         #endregion
 
-        #region Constructors
-        protected OnOff(Values value, string displayText)
-            : base(value, displayText)
-        {
-        }
-
+        #region Base Constructor
         protected OnOff(Values value)
-            : this(value, value.ToString())
+            : base(value)
         {
         }
         #endregion
@@ -49,6 +44,24 @@ namespace CSharpStatePattern.Partials
         public static implicit operator OnOff(byte valueAsByte)
         {
             return OnOff.States.Single(state => ((byte)state.Value == valueAsByte));
+        }
+        #endregion
+
+        #region Custom Constructors
+        public partial class OnState : OnOff
+        {
+            protected internal OnState()
+                : base(Values.On)
+            {
+            }
+        }
+
+        public partial class OffState : OnOff
+        {
+            protected internal OffState()
+                : base(Values.Off)
+            {
+            }
         }
         #endregion
     }

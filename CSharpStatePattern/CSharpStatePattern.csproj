@@ -40,13 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Target.donotcompileyet.cs" />
     <Compile Include="OnOff.Partials.cs" />
     <Compile Include="OnOff.Partials.Boilerplate.cs" />
     <Compile Include="OnOff.Generic.cs" />
     <Compile Include="State.Generic.cs" />
     <Compile Include="OnOff.PoC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Target.donotcompileyet.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,24 +9,26 @@ namespace CSharpStatePattern.Partials
     {
         public abstract OnOff Switch();
 
-        public class OnState : OnOff
+        public partial class OnState : OnOff
         {
-            internal OnState()
-                : base(Values.On, "Ligado")
+            public override string DisplayText
             {
+                get { return "Ligado"; }
             }
+
             public override OnOff Switch()
             {
                 return OnOff.Off;
             }
         }
 
-        public class OffState : OnOff
+        public partial class OffState : OnOff
         {
-            internal OffState()
-                : base(Values.Off, "Desligado")
+            public override string DisplayText
             {
+                get { return "Desligado"; }
             }
+
             public override OnOff Switch()
             {
                 return OnOff.On;

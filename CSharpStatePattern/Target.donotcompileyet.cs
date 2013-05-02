@@ -8,8 +8,7 @@ namespace CSharpStatePattern.Final
     /// <summary>
     /// This is how I want the final version of a State to be
     /// </summary>
-    [State]
-    public abstract class OnOff : State
+    public abstract class OnOff
     {
         public abstract OnOff Switch();
 

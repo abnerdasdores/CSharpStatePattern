@@ -51,15 +51,9 @@ namespace CSharpStatePattern
         #endregion
 
         #region Constructors
-        protected State(TValues value, string displayText)
+        protected State(TValues value)
         {
             this.value = value;
-            this.displayText = displayText;
-        }
-
-        protected State(TValues value)
-            : this(value, value.ToString())
-        {
         }
         #endregion
 
@@ -70,10 +64,9 @@ namespace CSharpStatePattern
             get { return value; }
         }
 
-        protected string displayText;
-        public string DisplayText
+        public virtual string DisplayText
         {
-            get { return displayText; }
+            get { return Value.ToString(); }
         }
 
         public override string ToString()

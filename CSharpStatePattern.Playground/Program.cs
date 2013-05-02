@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using CSharpStatePattern.PoC;
+//using CSharpStatePattern.PoC;
+//using CSharpStatePattern.Generic;
+using CSharpStatePattern.Partials;
 
 namespace CSharpStatePattern.Playground
 {
@@ -10,13 +12,20 @@ namespace CSharpStatePattern.Playground
     {
         static void Main(string[] args)
         {
-            OnOff on = OnOff.On;
-            byte b = on;
-            OnOff.Values v = on;
-            Console.WriteLine("on = {0}", on);
-            Console.WriteLine("b = {0}", b);
-            Console.WriteLine("v = {0}", v);
+            Print(OnOff.On);
+            Print(OnOff.Off);
             Console.ReadKey();
+        }
+
+        private static void Print(OnOff state)
+        {
+            byte stateByte = state;
+            OnOff.Values stateValue = state;
+            Console.WriteLine("State = {0}", state);
+            Console.WriteLine("Byte = {0}", stateByte);
+            Console.WriteLine("Value = {0}", stateValue);
+            Console.WriteLine("DisplayText = {0}", state.DisplayText);
+            Console.WriteLine();
         }
     }
 }

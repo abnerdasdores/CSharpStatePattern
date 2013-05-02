@@ -30,13 +30,8 @@ namespace CSharpStatePattern.Generic
         #endregion
 
         #region Constructors
-        protected OnOff(Values value, string displayText)
-            : base(value, displayText)
-        {
-        }
-
         protected OnOff(Values value)
-            : this(value, value.ToString())
+            : base(value)
         {
         }
         #endregion
@@ -60,9 +55,15 @@ namespace CSharpStatePattern.Generic
         public class OnState : OnOff
         {
             internal OnState()
-                : base(Values.On, "Ligado")
+                : base(Values.On)
             {
             }
+
+            public override string DisplayText
+            {
+                get { return "Ligado"; }
+            }
+
             public override OnOff Switch()
             {
                 return OnOff.Off;
@@ -74,9 +75,15 @@ namespace CSharpStatePattern.Generic
         public class OffState : OnOff
         {
             internal OffState()
-                : base(Values.Off, "Desligado")
+                : base(Values.Off)
             {
             }
+
+            public override string DisplayText
+            {
+                get { return "Desligado"; }
+            }
+
             public override OnOff Switch()
             {
                 return OnOff.On;
