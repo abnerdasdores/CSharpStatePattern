@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection;
 
-namespace CSharpStatePattern.Generic
+namespace CSharpStatePattern
 {
     /// <summary>
     /// This class is used as proof of concept of how to implement the state pattern in CSharp

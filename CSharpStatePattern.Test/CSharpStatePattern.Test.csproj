@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OnOff.Partials.Test.cs" />
     <Compile Include="OnOff.Generic.Test.cs" />
     <Compile Include="OnOff.PoC.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

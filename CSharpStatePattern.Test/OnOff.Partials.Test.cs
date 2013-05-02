@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 
-namespace CSharpStatePattern.Generic.Test
+namespace CSharpStatePattern.Partials.Test
 {
     [TestFixture]
-    public class OnOffGenericTests
+    public class OnOffPartialsTests
     {
         [Test]
         public void TestOnIsOn()
