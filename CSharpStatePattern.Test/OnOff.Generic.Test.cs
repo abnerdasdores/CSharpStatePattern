@@ -49,17 +49,15 @@ namespace CSharpStatePattern.Generic.Test
             switch (on.Value)
             {
                 case OnOff.Values.On:
-                    Assert.Pass();
                     break;
                 default:
                     Assert.Fail();
                     break;
             }
-            var off = OnOff.On;
+            var off = OnOff.Off;
             switch (off.Value)
             {
                 case OnOff.Values.Off:
-                    Assert.Pass();
                     break;
                 default:
                     Assert.Fail();
